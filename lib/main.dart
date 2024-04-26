@@ -1,11 +1,11 @@
-
 import 'package:flutter/material.dart';
+import 'package:ostad_assignment2/views/landscapeScreen.dart';
 import 'package:ostad_assignment2/views/portraitScreen.dart';
 
 import 'const/app_colors.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -36,13 +36,24 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('Photo Gallery'),
         centerTitle: true,
-        leading: const Icon(Icons.arrow_back_ios_outlined),
-        actions: const [
-          Icon(Icons.more_vert_outlined)
+        leading: Container(
+          margin: EdgeInsets.all(8),
+          decoration: BoxDecoration(
+              color: AppColors.grayColor.withOpacity(0.5),
+              borderRadius: BorderRadius.circular(12)),
+          child: Icon(Icons.arrow_back_ios_outlined),
+        ),
+        actions: [
+          Icon(Icons.more_vert_outlined),
         ],
       ),
-      body: PortraitScreen(),
+      body: OrientationBuilder(
+        builder: (context, orientation) {
+          return orientation == Orientation.portrait
+              ? PortraitScreen()
+              : LandScapeScreen();
+        },
+      ),
     );
   }
 }
-

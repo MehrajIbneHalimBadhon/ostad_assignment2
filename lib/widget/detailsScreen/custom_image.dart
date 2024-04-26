@@ -8,7 +8,8 @@ Widget customImage(String image) {
         borderRadius: BorderRadius.circular(12),
         child: Image.asset(
           image,
-          fit: BoxFit.contain, // Adjust how the image fits within the container
+          width: double.maxFinite,
+          fit: BoxFit.cover, // Adjust how the image fits within the container
         ),
       ),
     ),

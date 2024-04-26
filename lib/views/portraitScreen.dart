@@ -1,7 +1,9 @@
 
 import 'package:flutter/material.dart';
+import 'package:ostad_assignment2/const/app_colors.dart';
 
 import '../model/photo_gallery.dart';
+import '../widget/custom_button.dart';
 import '../widget/detailsScreen/custom_headline.dart';
 import '../widget/detailsScreen/custom_image.dart';
 import '../widget/detailsScreen/custom_text.dart';
@@ -78,9 +80,10 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(gallery.title),centerTitle: true,),
+      appBar: AppBar(title: Text(gallery.title), centerTitle: true,),
       body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
@@ -100,7 +103,84 @@ class DetailsScreen extends StatelessWidget {
                   customText(
                     gallery.description,
                   ),
-                  // You can add more details here if needed
+                  SizedBox(height: 10),
+                  customButton('See More', (){}),
+                  SizedBox(height: 10),
+                  Text(
+                    gallery.suggestion,
+                    style: TextStyle(color: AppColors.greenColor, fontSize: 20, fontWeight: FontWeight.w500),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: Container(
+                      height: 200,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 2.5),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(12),
+                                  image: DecorationImage(
+                                    image: AssetImage(gallery.suggestionImage1),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                child: Stack(
+                                  children: [
+                                    Positioned(
+                                      bottom: 10,
+                                      left: 10,
+                                      child: Text(
+                                        'Dawn',
+                                        style: const TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 2.5),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(12),
+                                  image: DecorationImage(
+                                    image: AssetImage(gallery.suggestionImage2),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                child: Stack(
+                                  children: [
+                                    Positioned(
+                                      bottom: 10,
+                                      left: 10,
+                                      child: Text(
+                                        'Leaves',
+                                        style: const TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             )
@@ -110,3 +190,4 @@ class DetailsScreen extends StatelessWidget {
     );
   }
 }
+

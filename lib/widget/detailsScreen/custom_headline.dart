@@ -3,14 +3,11 @@ import 'package:flutter/cupertino.dart';
 Widget headLine(title){
   return Wrap(
     children: [
-      Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: Text(title,style: potraitHeadLineStyle(),),
-      )
+      Text(title,style: HeadLineStyle(),)
     ],
   );
 }
-TextStyle potraitHeadLineStyle(){
+TextStyle HeadLineStyle(){
   return const TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.w500,

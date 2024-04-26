@@ -3,16 +3,13 @@ import 'package:flutter/material.dart';
 Widget customText(title){
   return Wrap(
     children: [
-      Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: Text(title,style: potraitcustomTextStyle(),),
-      )
+      Text(title,style: customTextStyle(),)
     ],
   );
 }
-TextStyle potraitcustomTextStyle(){
+TextStyle customTextStyle(){
   return const TextStyle(
-      fontSize: 18,
+      fontSize: 15,
       fontWeight: FontWeight.w400,
       letterSpacing: 0.5,
   );
