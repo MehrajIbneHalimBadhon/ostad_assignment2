@@ -32,7 +32,7 @@ class _LandScapeScreenState extends State<LandScapeScreen> {
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailsScreen(
+                  builder: (context) => LandScapeDetailsScreen(
                     gallery: galleries[index],
                   ),
                 ),
@@ -70,10 +70,10 @@ class _LandScapeScreenState extends State<LandScapeScreen> {
   }
 }
 
-class DetailsScreen extends StatelessWidget {
+class LandScapeDetailsScreen extends StatelessWidget {
   final PhotoGallery gallery;
 
-  const DetailsScreen({Key? key, required this.gallery}) : super(key: key);
+  const LandScapeDetailsScreen({Key? key, required this.gallery}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -105,13 +105,13 @@ class DetailsScreen extends StatelessWidget {
                     customText(
                       gallery.description,
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 5),
                     customButton('See More', () {}),
-                    SizedBox(height: 10),
+                    SizedBox(height: 5),
                     headLine(gallery.suggestion),
-                    SizedBox(height: 10),
+                    SizedBox(height: 5),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      padding: const EdgeInsets.symmetric(vertical: 5),
                       child: Container(
                         height: 200,
                         child: Row(

@@ -34,7 +34,7 @@ class _PortraitScreenState extends State<PortraitScreen> {
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailsScreen(
+                  builder: (context) => PortraitDetailsScreen(
                     gallery: galleries[index],
                   ),
                 ),
@@ -72,10 +72,10 @@ class _PortraitScreenState extends State<PortraitScreen> {
   }
 }
 
-class DetailsScreen extends StatelessWidget {
+class PortraitDetailsScreen extends StatelessWidget {
   final PhotoGallery gallery;
 
-  const DetailsScreen({Key? key, required this.gallery}) : super(key: key);
+  const PortraitDetailsScreen({Key? key, required this.gallery}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
